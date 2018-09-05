@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ExercicioNota01</string>
+    <string name="hintNomeAluno">Nome do aluno</string>
+    <string name="txtMatriculaAluno">Digite a matrícula do aluno</string>
+    <string name="txtProfessorNome">Digite o nome aqui!</string>
+    <string name="txtSiapeProfessor">Digite o SIAPE do professor!</string>
 </resources>
