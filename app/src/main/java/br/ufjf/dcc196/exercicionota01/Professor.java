@@ -19,13 +19,14 @@ public class Professor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_professor);
-        btnProfConfirma = findViewById(R.id.btnConfirmaProfessor);
+        btnProfConfirma = (Button) findViewById(R.id.btnConfirmaProfessor);
         edtProfNome = (EditText) findViewById(R.id.txtProfessorNome);
         edtProfSiape = (EditText) findViewById(R.id.txtProfessorSiape);
         btnProfConfirma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent resultado = new Intent();
+                resultado.putExtra(MainActivity.PESSOA_NOME, edtProfNome.getText().toString());
                 setResult(Activity.RESULT_OK, resultado);
                 finish();
             }

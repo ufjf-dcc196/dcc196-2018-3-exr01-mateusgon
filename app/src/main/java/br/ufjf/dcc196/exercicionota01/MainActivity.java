@@ -8,17 +8,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_PROF = 1;
     private static final int REQUEST_ALUNO = 2;
     private static final int REQUEST_EXT = 3;
+    public static final String PESSOA_NOME = "Vazio";
     private Button btnProfessor;
     private Button btnAluno;
     private Button btnExterno;
     private TextView txtProfessor;
     private TextView txtAluno;
     private TextView txtExterno;
+    private TextView txtNomePessoa;
     private TextView txtTotal;
 
     @Override
@@ -55,29 +59,48 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        txtProfessor = (TextView) findViewById(R.id.txtProfessores);
-        txtAluno = (TextView) findViewById(R.id.txtAlunos);
-        txtExterno = (TextView) findViewById(R.id.txtExternos);
-        if (requestCode == MainActivity.REQUEST_PROF && resultCode == Activity.RESULT_OK)
-        {
+        txtProfessor = (TextView) findViewById(R.id.txtNumProfessores);
+        txtAluno = (TextView) findViewById(R.id.txtNumAlunos);
+        txtExterno = (TextView) findViewById(R.id.txtNumExternos);
+        txtNomePessoa = (TextView) findViewById(R.id.txtPessoaCadastrada);
+        txtTotal = (TextView) findViewById(R.id.txtNumTotal);
+        if (requestCode == MainActivity.REQUEST_PROF && resultCode == Activity.RESULT_OK) {
+            Bundle bundleResultado = data.getExtras();
+            String nomeCadastrado = bundleResultado.getString(MainActivity.PESSOA_NOME);
+            txtNomePessoa.setText("Cadastrado: " + nomeCadastrado);
             Integer soma = Integer.parseInt(txtProfessor.getText().toString());
             soma++;
             String totalProfessor = String.valueOf(soma);
             txtProfessor.setText(totalProfessor);
+            Integer somaTotal = Integer.parseInt(txtTotal.getText().toString());
+            somaTotal++;
+            txtTotal.setText(somaTotal);
         }
         if (requestCode == MainActivity.REQUEST_ALUNO && resultCode == Activity.RESULT_OK)
         {
+            Bundle bundleResultado = data.getExtras();
+            String nomeCadastrado = bundleResultado.getString(MainActivity.PESSOA_NOME);
+            txtNomePessoa.setText("Cadastrado: " + nomeCadastrado);
             Integer soma = Integer.parseInt(txtAluno.getText().toString());
             soma++;
             String totalAluno = String.valueOf(soma);
             txtAluno.setText(totalAluno);
+            Integer somaTotal = Integer.parseInt(txtTotal.getText().toString());
+            somaTotal++;
+            txtTotal.setText(somaTotal);
         }
         if (requestCode == MainActivity.REQUEST_EXT && resultCode == Activity.RESULT_OK)
         {
+            Bundle bundleResultado = data.getExtras();
+            String nomeCadastrado = bundleResultado.getString(MainActivity.PESSOA_NOME);
+            txtNomePessoa.setText("Cadastrado: " + nomeCadastrado);
             Integer soma = Integer.parseInt(txtExterno.getText().toString());
             soma++;
             String totalExterno = String.valueOf(soma);
             txtExterno.setText(totalExterno);
+            Integer somaTotal = Integer.parseInt(txtTotal.getText().toString());
+            somaTotal++;
+            txtTotal.setText(somaTotal);
         }
     }
 }
