@@ -4,4 +4,7 @@
     <string name="txtMatriculaAluno">Digite a matrícula do aluno</string>
     <string name="txtProfessorNome">Digite o nome aqui!</string>
     <string name="txtSiapeProfessor">Digite o SIAPE do professor!</string>
+    <string name="hintNomeExterno" />
+    <string name="hintNomeExterno2">Digite o nome aqui!</string>
+    <string name="hintEmailExterno">Digite o email aqui!</string>
 </resources>
