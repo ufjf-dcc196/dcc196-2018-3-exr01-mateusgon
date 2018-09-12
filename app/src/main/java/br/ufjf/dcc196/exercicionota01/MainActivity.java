@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
             txtProfessor.setText(totalProfessor);
             Integer somaTotal = Integer.parseInt(txtTotal.getText().toString());
             somaTotal++;
-            txtTotal.setText(somaTotal);
+            String totalCadastrados = String.valueOf(somaTotal);
+            txtTotal.setText(totalCadastrados);
         }
         if (requestCode == MainActivity.REQUEST_ALUNO && resultCode == Activity.RESULT_OK)
         {
@@ -87,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
             txtAluno.setText(totalAluno);
             Integer somaTotal = Integer.parseInt(txtTotal.getText().toString());
             somaTotal++;
-            txtTotal.setText(somaTotal);
+            String totalCadastrados = String.valueOf(somaTotal);
+            txtTotal.setText(totalCadastrados);
         }
         if (requestCode == MainActivity.REQUEST_EXT && resultCode == Activity.RESULT_OK)
         {
@@ -100,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
             txtExterno.setText(totalExterno);
             Integer somaTotal = Integer.parseInt(txtTotal.getText().toString());
             somaTotal++;
-            txtTotal.setText(somaTotal);
+            String totalCadastrados = String.valueOf(somaTotal);
+            txtTotal.setText(totalCadastrados);
         }
     }
 }
